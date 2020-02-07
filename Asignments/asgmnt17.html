@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multi Layered Effect with CSS3</title>
+<style>
+
+.main_container{
+    margin-top: 60px;
+    border: 2px dashed red;
+    padding-left: 150px;
+    padding-top: 50px;
+    height: 390px;
+}
+.item{
+    position: relative;
+width: 160px;
+margin-top: 120px;
+background: rgba(0, 0, 0, 1);
+background-size: cover;
+transform: rotate(-20deg) skew(30deg) scale(0.9);
+transition: 0.5s;
+
+}
+/* facebook */
+.container1{
+top: 15px;
+left: 2%;
+}
+.container1 img{
+position:  absolute;
+width: 120px;
+height: 100px;
+transition: 0.5s;
+cursor:  pointer;
+}
+.container1:hover img:nth-child(4){
+transform: translate(160px, -160px);
+opacity: 1;
+}
+.container1:hover img:nth-child(3){
+transform: translate(120px, -120px);
+opacity: 0.8;
+}
+.container1:hover img:nth-child(2){
+transform: translate(80px, -80px);
+opacity: 0.6;
+}
+.container1:hover img:nth-child(1){
+transform: translate(40px, -40px);
+opacity: 0.4;
+}
+/* google */
+.container2{
+top: 20px;
+left: 16%;
+}
+.container2 img{
+position:  absolute;
+width: 120px;
+height: 100px;
+transition: 0.5s;
+cursor:  pointer;
+}
+.container2:hover img:nth-child(4){
+transform: translate(160px, -160px);
+opacity: 1;
+}
+.container2:hover img:nth-child(3){
+transform: translate(120px, -120px);
+opacity: 0.8;
+}
+.container2:hover img:nth-child(2){
+transform: translate(80px, -80px);
+opacity: 0.6;
+}
+.container2:hover img:nth-child(1){
+transform: translate(40px, -40px);
+opacity: 0.4;
+}
+/* skype */
+.container3{
+top: 25px;
+left: 31%;
+}
+.container3 img{
+position:  absolute;
+width: 120px;
+height: 100px;
+transition: 0.5s;
+cursor:  pointer;
+}
+.container3:hover img:nth-child(4){
+transform: translate(160px, -160px);
+opacity: 1;
+}
+.container3:hover img:nth-child(3){
+transform: translate(120px, -120px);
+opacity: 0.8;
+}
+.container3:hover img:nth-child(2){
+transform: translate(80px, -80px);
+opacity: 0.6;
+}
+.container3:hover img:nth-child(1){
+transform: translate(40px, -40px);
+opacity: 0.4;
+}
+/* linkedin */
+.container4{
+top: 25px;
+left: 46%;
+}
+.container4 img{
+position:  absolute;
+width: 120px;
+height: 100px;
+transition: 0.5s;
+cursor:  pointer;
+}
+.container4:hover img:nth-child(4){
+transform: translate(160px, -160px);
+opacity: 1;
+}
+.container4:hover img:nth-child(3){
+transform: translate(120px, -120px);
+opacity: 0.8;
+}
+.container4:hover img:nth-child(2){
+transform: translate(80px, -80px);
+opacity: 0.6;
+}
+.container4:hover img:nth-child(1){
+transform: translate(40px, -40px);
+opacity: 0.4;
+}
+/* instagram */
+.container5{
+top: 30px;
+left: 61%;
+}
+.container5 img{
+position:  absolute;
+width: 120px;
+height: 100px;
+transition: 0.5s;
+cursor:  pointer;
+}
+.container5:hover img:nth-child(4){
+transform: translate(160px, -160px);
+opacity: 1;
+}
+.container5:hover img:nth-child(3){
+transform: translate(120px, -120px);
+opacity: 0.8;
+}
+.container5:hover img:nth-child(2){
+transform: translate(80px, -80px);
+opacity: 0.6;
+}
+.container5:hover img:nth-child(1){
+transform: translate(40px, -40px);
+opacity: 0.4;
+}
+
+</style>
+
+
+</head>
+<body>
+    <div class="main_container">
+<div class="container1 item">
+<img src="asg17a.png" alt="facebook" >
+<img src="asg17a.png" alt="facebook">
+<img src="asg17a.png" alt="facebook">
+<img src="asg17a.png" alt="facebook">
+</div>
+<div class="container2 item">
+    <img src="asg17b.jpg" alt="google">
+    <img src="asg17b.jpg" alt="google">
+    <img src="asg17b.jpg" alt="google">
+    <img src="asg17b.jpg" alt="google">
+</div>
+<div class="container3 item">
+    <img src="asg17c.png" alt="twitter">
+    <img src="asg17c.png" alt="twitter">
+    <img src="asg17c.png" alt="twitter">
+    <img src="asg17c.png" alt="twitter">
+</div>
+<div class="container4 item">
+    <img src="asg17d.png" alt="linkedin">
+    <img src="asg17d.png" alt="linkedin">
+    <img src="asg17d.png" alt="linkedin">
+    <img src="asg17d.png" alt="linkedin">
+</div>
+<div class="container5 item">
+    <img src="asg17e.png" alt="insta">
+    <img src="asg17e.png" alt="insta">
+    <img src="asg17e.png" alt="insta">
+    <img src="asg17e.png" alt="insta">
+</div>
+</div>
+</body>
+</html>

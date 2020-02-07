@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webpage</title>
+    <style>
+        body{
+            background-color: rgb(226, 223, 223);
+            margin: 20px;
+        }
+        nav{
+            background-color: white;
+            height: 50px;
+            width: 100%;
+            margin-top: -20px;
+        }
+   
+    
+    .first div{
+        background-color: rgb(24, 23, 23);
+        color: gray;
+border-bottom: 10px solid rgb(226, 223, 223);
+/* width: 100%; */
+/* float: left; */
+    }
+    .first div img{
+width: 20px;
+    }
+    .first div p{
+        border-bottom: 1px solid gray;
+        line-height: 2em;
+        margin-bottom: -1px;
+    }
+    .first div p span{
+        width: 25px;
+        color: white;
+        height: 28px;
+        background-color: rgb(46, 224, 55);
+        margin-right: 10px;
+        border-radius: 10%;
+    }
+    
+    .flex1{
+        display: flex;
+        margin-top: 20px;
+    }
+    .flex1 .F1{
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        width: 33%;
+        height: 100px;
+        background-color: white;
+        /* margin: 10px; */
+    }
+.B{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+    .grid1{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px 20px;
+    }
+    .grid1 div{
+        background-color: white;
+        text-align: center;
+        padding-top: 2%;
+    }
+    .second{
+        width: 100%;
+        margin-top: 20px;
+    }
+   .second  .progressBar{
+        background-color: white;
+    }
+    .progressBar div{
+        margin-left: 5%;
+        margin-right: 5%;
+        border-bottom: 1px solid  rgb(226, 221, 221) ;
+    }
+    .progressBar .bg-grey{
+        margin-left: 5%;
+        width: 90%;
+        background-color: rgb(226, 221, 221);
+        height: 10px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+   .blue,.green,.yellow,.red{
+       border-radius: 20px;
+       position: absolute;
+       height: 10px;
+   }
+    .bg-grey .blue{
+        background-color: rgb(35, 162, 212);
+        width: 16%
+    }
+    .bg-grey .green{
+        background-color: rgb(35, 212, 50);
+        width: 12%
+    }
+    .bg-grey .yellow{
+        background-color: rgb(219, 235, 2);
+        width: 10%
+    }
+    .bg-grey .red{
+        background-color: rgb(207, 42, 13);
+        width: 14%
+    }
+    .chart{
+        width: 100%;
+        clear: both;
+    }
+    .chart img{
+        width: 100%;
+        height: 500px;
+    }
+    span{
+        float: right;
+    }
+    .tables{
+        width: 100%;
+        background-color: white
+    }
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+    td, th {
+  border: 1px solid #cecaca;
+  text-align: left;
+  padding: 8px;
+  width: 100%;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* media query for laptop reaponsive */
+    @media only screen and (min-width:1024px) and (max-width:1445px){
+        .first{
+        width: 20%;
+        float: left;
+    } 
+    .first div{
+width: 100%;
+float: left;
+    }
+    .firstRight{
+        width: 78%;
+        float: right;
+    }
+    .grid1{
+        float:left;
+        width: 66%;
+    }
+    .second  .progressBar{
+        float: left; 
+        margin-left: 25px;
+        width: 30.5%;
+    }
+    td, th {
+ 
+  font-size: 80%;
+}
+    li{
+        display: inline;
+        margin-left: 8px;
+    }
+    #lines{
+        visibility: hidden;
+    }
+    }
+    /* media query for mobile and tablets responsive */
+    @media only screen and (min-width:318px) and (max-width:770px){
+        .first{
+        width: 100%;
+    } 
+    .first div{
+       width: 100%;
+           }
+   
+           .firstRight{
+        width: 100%;
+    }
+    .grid1{
+        width: 100%;
+    }
+    .second  .progressBar{        
+        width: 100%;
+    }
+    td, th {
+
+  font-size: 50%;
+}
+li{
+      visibility: hidden;
+      display: inline;
+    }
+    li:first-child{
+        /* margin-left: -10%; */
+        font-size: small;
+        visibility: visible;
+       list-style-type: none;
+    }
+    #lines{
+        visibility: visible;
+        list-style-type: none;
+        position: absolute;
+        top: 6%;
+        right: 10%;
+    }
+    }
+    </style>
+</head>
+<body>
+    
+        <nav>
+            <ul>
+                <li style="font-weight: bolder; font-size: 30px; margin-right: 10px;">Edmin</li>
+                <li><a href=""><img src="nav-msg.jpg" alt="" width="30px" style="margin-bottom: -8px;"></a></li>
+                <li><a href=""><img src="eye.png" alt="" width="30px"></a></li>
+                <li><a href=""><img src="Assignment 14\charts.png" alt="" width="30px"></a></li>
+                <li><input type="text"><img src="Assignment 14\search.png" width="30px" style="margin-bottom: -10px;" alt="">
+                </li>
+                <li style="margin-left:25%;"><select name="dropdown">
+                        <option value="dropdown">Dropdown</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select></li>
+                <li>Support</li>
+        
+                <li><img src="Assignment 14\man.PNG" style="margin-bottom: -10px;" alt="">
+                    <select name="dropdown">
+                        <option value="C"></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select></li>
+                <li id="lines">&#9776; </li>
+            </ul>
+        </nav>
+        <div class="first">
+            <div>
+                <p><img src="Assignment 14\dashboard.png" alt=""> Dashboard</p>
+                <p><img src="Assignment 14\news feed.jpg" alt=""> News feed <br><img src="Assignment 14\icon9.png" alt=""> Inbox <span>11</span></p>
+                <p><img src="Assignment 14\tasks.png" alt=""> Tasks <span style="background-color: rgb(235, 33, 33);">19</span></p>
+            </div>
+            <div> 
+                <p><img src="Assignment 14\b.jpg" alt=""> Buttons</p>
+                <p><img src="Assignment 14\typography.png" alt=""> Typography</p>
+                <p><img src="Assignment 14\forms.png" alt=""> Forms</p>
+                <p><img src="Assignment 14\tables.png" alt=""> Tables <br><img src="Assignment 14\charts.png" alt=""> charts</p>
+            </div>
+            <div>
+                <p><img src="Assignment 14\more pages.jpg" alt=""> More Pages</p>
+                <p><img src="Assignment 14\logout.png" alt=""> Logout</p>
+            </div>
+                </div>
+   
+                <div class="firstRight">
+
+               
+    <div class="flex1">
+<div class="F1 A"> 
+    <img src="Assignment 14\icon1.PNG" alt="first image">
+    <p> 65% <br> Growth</p>
+</div>
+<div class="F1 B"> 
+    <img src="Assignment 14\icon2.PNG" alt="second image">
+    <p> 15 <br> New users</p>
+</div>
+<div class="F1 C">
+    <img src="Assignment 14\icon3.PNG" alt="third image">
+    <p>15,152 <br> profit</p>
+    </div>
+    </div>
+   
+    <div class="second">
+<div class="grid1">
+    <div>
+    <img src="Assignment 14\inbox.PNG" alt="message">
+    <p>Messages</p>
+    </div>
+    <div>
+        <img src="Assignment 14\icon4.PNG" alt="charts">
+        <p>Charts</p>
+    </div>
+    <div>
+        <img src="Assignment 14\icon5.PNG" alt="Expenses">
+        <p>Expenses</p>
+    </div>
+    <div>
+        <img src="Assignment 14\icon6.PNG" alt="total sales">
+        <p>Total sales</p>
+    </div>
+    <div> <img src="Assignment 14\icon7.PNG" alt="social feed">
+        <p>Social feed</p></div>
+    <div> <img src="Assignment 14\icon8.PNG" alt="bounce rate">
+        <p>Bounce rate</p></div>
+</div>
+<div class="progressBar">
+    <div>
+        <h4>Windows 8 <span>78%</span></h4>
+        <div class="bg-grey">
+            <span class="blue"></span>
+        </div>
+    </div>
+    <div>
+        <h4>Mac<span>56%</span></h4>
+        <div class="bg-grey">
+            <span class="green"></span>
+        </div>
+    </div>
+    <div>
+        <h4>Linux<span>44%</span></h4>
+        <div class="bg-grey">
+            <span class="yellow"></span>
+        </div>
+    </div>
+    <div>
+        <h4>iphone<span>67%</span></h4>
+        <div class="bg-grey">
+            <span class="red"></span>
+        </div>
+    </div>
+
+</div>
+    </div>
+    <div class="chart">
+        <h1>Profit chart</h1>
+        <img src="Assignment 14\graph.PNG" alt="chart">
+    </div>
+    <div class="tables">
+<h1 style="background-color: rgb(223, 219, 219);">Data Tables</h1>
+<p> show <input type="number" min="1" max="10" >entries <span> search <input type="text"> </span></p>
+<table>
+<tr>
+    <th>Rendering Engine</th>
+    <th>Browser</th>
+    <th>Platform(s)</th>
+    <th>Engine Version</th>
+    <th>CSS grade</th>
+</tr>
+<tr>
+    <td>Gecko</td>
+    <td>Firefox 1.0</td>
+    <td>Win 98+ / OSX2+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr>
+<tr>
+    <td>Gecko</td>
+    <td>Firefox 1.5</td>
+    <td>Win 98+ / OSX2+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr><tr>
+    <td>Gecko</td>
+    <td>Firefox 2.0</td>
+    <td>Win 98+ / OSX2+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr>
+<tr>
+    <td>Gecko</td>
+    <td>Firefox 3.0</td>
+    <td>Win 98+ / OSX3+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr><tr>
+    <td>Gecko</td>
+    <td>Camino 1.0</td>
+    <td> OSX2+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr><tr>
+    <td>Gecko</td>
+    <td>Camino 1.5</td>
+    <td>OSX3+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr><tr>
+    <td>Gecko</td>
+    <td>Netscape 7.2</td>
+    <td>Win 95+ / Mac Os 8.6-9.2</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr><tr>
+    <td>Gecko</td>
+    <td>Netscape browser 8</td>
+    <td>Win 98SE+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr><tr>
+    <td>Gecko</td>
+    <td>Netscape browser 9</td>
+    <td>Win 98+ / OSX2+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr>
+<tr>
+    <td>Gecko</td>
+    <td>Mozilla 1.0</td>
+    <td>Win 95+ / OSX1+</td>
+    <td>1.7</td>
+    <td>A</td>
+</tr>
+
+</table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive webpage</title>
+    <style>
+  
+  body{
+            width: 100%;
+        }
+        .nav-logo{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: small;
+        margin-left: 18%;
+        margin-right: 8%;
+        float: left;
+       font-weight: bolder;
+    }
+    body{
+            width: 100%;
+        }
+        .nav-logo{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: larger;
+        margin-left: 10%;
+        margin-right: 5%;
+        float: left;
+       font-weight: bolder;
+    }
+    /*FOR MOBILES*/
+    @media only screen and ( min-width:320px) and (max-width:500px){
+       
+    li{
+        visibility: hidden;
+        list-style-type: none;
+        float: left; 
+        /* display: inline; */
+         margin-left: 40px;
+        font-size: smaller;
+    }
+   li .lines{
+       visibility: visible;
+       position: absolute;
+       right: 10%;
+       top: 20px;
+   }
+    
+   /*for photos*/
+    .photos-box div{
+        display: inline-block;
+        width: 100%;
+        margin-top: 60px;
+    }
+    .photos-box img{
+        object-fit:fill;
+        height: 500px;
+    }
+    .pos-abs{
+background-color: white;
+color: black;
+text-align: center;
+box-sizing: content-box;
+width: 100%;
+height: 220px;
+    }
+    h4{
+        color: red;
+    } */
+    /*for paragraph*/
+   .pa{
+        font-size: xx-large;
+    } 
+    /* for positioning div below pictures*/
+    .A{
+       position: absolute;
+       top: 400px;
+       left: 10%;
+   }
+   .B{
+       position: absolute;
+       top: 990px;
+       left: 10%;
+   }
+   .C{
+       position: absolute;
+       top: 1560px;
+       left: 10%;
+   }
+    } 
+    /* FOR TABLETS*/
+     @media only screen and ( min-width:501px) and (max-width: 768px){
+      
+    li{
+        visibility: hidden;
+        list-style-type: none;
+        float: left; 
+        margin-left: 20px;
+        font-size: larger;
+    } 
+    li .lines{
+        visibility: visible;
+        position: absolute;
+        top: 20px;
+        right: 5%;
+    }
+   /*for photos*/
+     .photos-box div{
+        display: inline-block;
+        width: 48%;
+        margin-left: 10px;
+    }
+    .photos-box .pic3{
+        margin-left: 25%;
+        margin-top: 50px;
+    }
+    
+    .photos-box img{
+        object-fit:fill;
+        height: 400px;
+        width: 100%;
+    }
+    .pos-abs{
+background-color: white;
+color: black;
+text-align: center; 
+/* box-sizing: content-box; */
+ height: 220px;
+width: 80%;
+    }
+    h4{
+        color: red;
+    } 
+    /*for paragraph*/
+    .pa{
+        font-size: xx-large;
+    } 
+    /* for positioning div below pictures*/
+    .A{
+       position: absolute;
+       top: 280px;
+       left: 1.1%;
+   }
+   .B{
+       position: absolute;
+       top: 280px;
+       left: 50%;
+   }
+   .C{
+       position: absolute;
+       top: 760px;
+       left: 24.8%;
+   }
+    } 
+    
+    /*FOR LAPTOPS*/ 
+    @media only screen and (min-width: 769px) and (max-width:1440px){
+        .nav-logo{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: larger;
+        margin-left: 18%;
+        margin-right: 8%;
+        float: left;
+       font-weight: bolder;
+    }
+    li{
+        list-style-type: none;
+        float: left; 
+        /* display: inline; */
+         margin-left: 30px;
+        font-size: larger;
+    }
+    li .lines{
+        visibility: hidden;
+    }
+   /*for photos*/
+    .photos-box div{
+        display: inline-block;
+        width: 32%;
+    }
+    
+    .photos-box img{
+        object-fit:fill;
+    }
+  .photos-box  .pos-abs{
+background-color: white;
+color: black;
+text-align: center;
+box-sizing: content-box;
+width: 25%;
+height: 150px;
+    }
+    h4{
+        color: red;
+    }
+    /*for paragraph*/
+   .pa{
+        font-size: xx-large;
+    }
+    /* for positioning div below pictures*/
+   .A{
+       position: absolute;
+       top: 660px;
+       left: 3%;
+   }
+   .B{
+       position: absolute;
+       top: 660px;
+       left: 36%;
+   }
+   .C{
+       position: absolute;
+       top: 660px;
+       left: 68%;
+   }
+    }
+   
+    </style>
+</head>
+<body>
+    <div class="nav-class">
+        <div class="nav-logo">LifeLeck</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Archive</li>
+                <li>Category</li>
+                <li>Contact</li>
+                <li> <select style="border: transparent; font-size: 17px;">
+                    <option value="pages">pages</option>
+                    <option value="page1">page1</option>
+                    <option value="page2">page2</option>
+                    <option value="page3">page3</option>
+                  </select></li>
+                  <li><img src="social.PNG" alt="social-img"></li>
+                  <li ><a class="lines" href="">&#9776</a> </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="photos-box">
+        <div class="pic1">
+<img src="banner_blog_1.png" alt="blog1" >
+<div class="pos-abs A" >
+<h4>Fashion/Lifestyle</h4>
+<p class="pa">All said replenish years void kind say void </p>
+<p>Posted on Jan 17,2020</p>
+</div>
+        </div>
+        <div class="pic2">
+<img src="banner_blog_2.png" alt="blog2">
+ <div class="pos-abs B" >
+    <h4>Fashion/Lifestyle</h4>
+    <p class="pa">All said replenish years void kind say void </p>
+    <p>Posted on Jan 17,2020</p>
+    </div> 
+        </div>
+        <div class="pic3" >
+<img src="banner_blog_3.png" alt="blog3">
+<div class="pos-abs C">
+    <h4>Fashion/Lifestyle</h4>
+    <p class="pa">All said replenish years void kind say void </p>
+    <p>Posted on Jan 17,2020</p>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>

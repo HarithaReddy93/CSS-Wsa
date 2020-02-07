@@ -1,0 +1,593 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multi-grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px 10px;
+        }
+
+        .grid1 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 5px 5px;
+            grid-auto-rows: 80px;
+            background-color: black;
+            color: white;
+            margin-top: 5%;
+        }
+
+        .item11 {
+            grid-row: 1/3;
+            grid-column: 1/3;
+            background-color: dodgerblue;
+        }
+
+        .item12 {
+            grid-row: 1/3;
+            grid-column: 3/7;
+            background-color: dodgerblue;
+        }
+
+        .item13 {
+            grid-row: 3/5;
+            grid-column: 1/3;
+            background-color: dodgerblue;
+        }
+
+        .item14 {
+            grid-row: 3/5;
+            grid-column: 3/5;
+            background-color: orangered;
+        }
+
+        .item15 {
+            grid-row: 3/4;
+            grid-column: 5/6;
+            background-color: rgb(9, 9, 75);
+        }
+
+        .item16 {
+            grid-row: 3/4;
+            grid-column: 6/7;
+            background-color: orangered;
+        }
+
+        .item17 {
+            grid-row: 4/5;
+            grid-column: 5/6;
+            background-color: rgb(12, 85, 12);
+        }
+
+        .item18 {
+            grid-row: 4/5;
+            grid-column: 6/7;
+            background-color: rgb(117, 18, 117);
+        }
+
+        #first {
+            color: white;
+            position: absolute;
+            top: 1%;
+            font-size: 18px;
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 5px 5px;
+            grid-auto-rows: 80px;
+            margin-top: 5%;
+            color: white;
+            background-color: black;
+        }
+
+        .items21 {
+            grid-row: 1/3;
+            grid-column: 1/3;
+            background-color: rgb(24, 129, 24);
+        }
+
+        .items22 {
+            grid-row: 1/2;
+            grid-column: 3/4;
+            background-color: dodgerblue;
+        }
+
+        .items23 {
+            grid-row: 1/2;
+            grid-column: 4/5;
+            background-color: dodgerblue;
+        }
+
+        .items24 {
+            grid-row: 1/3;
+            grid-column: 5/7;
+            background-color: dodgerblue;
+        }
+
+        .items25 {
+            grid-row: 2/3;
+            grid-column: 3/4;
+            background-color:dodgerblue;
+        }
+
+        .items26 {
+            grid-row: 2/3;
+            grid-column: 4/5;
+            background-color: dodgerblue;
+        }
+
+        .items27 {
+            grid-row: 3/5;
+            grid-column: 1/3;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .items28 {
+            grid-row: 3/5;
+            grid-column: 3/5;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .items29 {
+            grid-row: 3/5;
+            grid-column: 5/7;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .items30 {
+            grid-row: 5/7;
+            grid-column: 1/3;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .items31 {
+            grid-row: 5/7;
+            grid-column: 3/5;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .items32 {
+            grid-row: 5/7;
+            grid-column: 5/7;
+            background-color: rgb(25, 25, 56);
+        }
+
+        #sec {
+            color: white;
+            position: absolute; 
+            top: 1%;
+            font-size: 18px;
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px 5px;
+            grid-auto-rows: 160px;
+            margin-top: -15%;
+            color: white;
+            background-color: black;
+            height: 500px;
+        }
+
+        .item31 {
+            grid-row: 1/2;
+            grid-column: 1/3;
+            background-image: url('war.jfif');
+        }
+
+        .item32 {
+            grid-row: 1/2;
+            grid-column: 3/4;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item33 {
+            grid-row: 2/3;
+            grid-column: 1/2;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item34 {
+            grid-row: 2/3;
+            grid-column: 2/3;
+            background-color: rgb(244, 244, 248);
+        }
+
+        .item35 {
+            grid-row: 2/3;
+            grid-column: 3/4;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item36 {
+            grid-row: 3/4;
+            grid-column: 1/2;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item37 {
+            grid-row: 3/4;
+            grid-column: 2/3;
+            background-color: rgb(223, 108, 14);
+        }
+
+        .item38 {
+            grid-row: 3/4;
+            grid-column: 3/4;
+            background-color: rgb(25, 25, 56);
+        }
+
+        #thr {
+            color: white;
+            position: relative;
+            top: -330%;
+            font-size: 18px;
+        }
+
+        .grid4 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 5px 5px;
+            grid-auto-rows: 78px;
+            margin-top: 10%;
+            color: white;
+            background-color: black;
+            height: 340px
+        }
+
+        .item41 {
+            grid-row: 1/3;
+            grid-column: 1/3;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item42 {
+            grid-row: 1/2;
+            grid-column: 3/4;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item43 {
+            grid-row: 1/2;
+            grid-column: 4/5;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item44 {
+            grid-row: 1/3;
+            grid-column: 5/7;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item45 {
+            grid-row: 2/3;
+            grid-column: 3/4;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item46 {
+            grid-row: 2/3;
+            grid-column: 4/5;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item47 {
+            grid-row: 3/5;
+            grid-column: 1/3;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item48 {
+            grid-row: 3/5;
+            grid-column: 3/5;
+            background-color: rgb(25, 25, 56);
+        }
+
+        .item49 {
+            grid-row: 3/5;
+            grid-column: 5/7;
+            background-color: rgb(69, 69, 163);
+        }
+
+        #four {
+            color: rgb(221, 216, 216);
+            position: relative;
+            top: -480%;
+            font-size: 18px;
+        }
+
+        .img1 {
+            width: 50%;
+            height: 50%;
+            margin-top: 17%;
+            margin-left: 24%;
+        }
+
+        .p1 {
+            font-size: 25px;
+            margin-top: 5%;
+            margin-left: 5%;
+            display: inline-block;
+        }
+
+        
+        .img2 {
+            width: 20%;
+            height: 30%;
+            margin-left: 10%;
+            margin-top: 5%;
+        }
+        .img21 {
+            width: 20%;
+            height: 30%;
+            margin-left: 10%;
+            margin-top: -7%;
+        }
+
+        body {
+            background-color: black;
+        }
+
+       
+
+        .img3 {
+            height: 75%;
+            width: 100%
+        }
+
+        .img4 {
+            margin-top: 0%;
+            width: 100%;
+            height: 100%;
+        }
+        .img4G3{
+            margin-top: 0%;
+            width: 40px;
+            position: relative;
+            top: 100px;
+            left:80%;
+        }
+
+        .p3 {
+            margin-top: 17%;
+            font-size: 25px;
+            margin-left: 5%;
+        }
+
+        .p4 {
+            margin-top: -14%;
+            font-size: 25px;
+            margin-left: 5%;
+        }
+
+        .img5 {
+            width: 10%;
+            height: 10%;
+            margin-left: 24%;
+        }
+
+        .img6 {
+            width: 10%;
+            height: 10%;
+            margin-left: 24%;
+        }
+
+        .p5 {
+            text-align: center;
+            font-size: 25px;
+            margin-top: -1%;
+        }
+
+        .p6 {
+            margin-left: 5%;
+            font-size: 25px;
+            margin-top: -5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+          <!-- grid first -->
+        <div class="grid1">
+            <div id="first">Create</div>
+            <div class="item11">
+                <img src="Assignment13\calendar.PNG" class="img1">
+                <p class="p1">Calendar</p>
+            </div>
+          
+            <div class="item12">
+                <div>
+                    <img src="Assignment13\gmail.png" class="img2">
+                    <img src="yahoo1.jfif" class="img2">
+                    <img src="Assignment13\Outlook_white_logo.png" class="img2">
+                </div>
+                <p class="p5">All your mail in one place <br>Add your accounts</p>
+                <p class="p6">Mail</p>
+            </div>
+          
+            <div class="item13">
+                <img src="Assignment13\pint 3d.jpg" class="img1">
+                <p class="p1">Paint 3D</p>
+            </div>
+          
+            <div class="item14">
+                <p class="p1">Get Office on<br> your phone <br>and tablet</p>
+                <p class="p1">Get Office</p>
+                <img src="Assignment13\office_logo.jpg" class="img21">
+            </div>
+          
+            <div class="item15">
+                <img src="Assignment13\word.png" class="img1">
+            </div>
+          
+            <div class="item16">
+                <img src="Assignment13\powerpoint.png" class="img1">
+            </div>
+          
+            <div class="item17">
+                <img src="Assignment13\excel.ico" class="img1">
+            </div>
+          
+            <div class="item18">
+                <img src="Assignment13\notes.PNG" class="img1">
+            </div>
+        </div>
+      
+        <!--second grid-->
+        <div class="grid2">
+            <div id="sec">Play</div>
+           
+            <div class="items21">
+                <img src="Assignment13/x-box.jpg" class="img3">
+                <p class="p1">Xbox</p>
+            </div>
+         
+            <div class="items22">
+                <img src="clap.jfif" class="img1">
+            </div>
+          
+            <div class="items23">
+                <img src="location1.png" class="img1">
+            </div>
+          
+            <div class="items24">
+                <img src="photo.png" class="img1">
+                <p class="p1">Photos</p>
+            </div>
+          
+            <div class="items25">
+                <img src="skype.png" class="img1">
+            </div>
+          
+            <div class="items26">
+                <img src="location2.jfif" class="img1">
+            </div>
+          
+            <div class="items27">
+                <img src="duck.jfif" class="img4">
+            </div>
+          
+            <div class="items28">
+                <img src="minecraft.jfif" class="img4">
+            </div>
+            
+            <div class="items29">
+                <img src="solitaire.jfif" class="img4">
+            </div>
+            
+            <div class="items30">
+                <img src="asphaltcar.jfif" class="img4">
+            </div>
+            
+            <div class="items31">
+                <img src="castle.jfif" class="img4">
+            </div>
+            
+            <div class="items32">
+                <img src="shout.jfif" class="img4">
+            </div>
+        </div>
+        
+        <!--third grid-->
+        <div class="grid3">
+            <div id="thr">Explore</div>
+        
+            <div class="item31">
+                <img src="store.png" class="img4G3">
+                <p class="p3">store</p>
+            </div>
+        
+            <div class="item32">
+                <img src="edge.png" class="img4">
+            </div>
+        
+            <div class="item33">
+                <img src="weather.jfif" class="img4">
+                <p class="p4">Weather</p>
+            </div>
+        
+            <div class="item34">
+                <img src="Assignment13/facebook.png" class="img4">
+                <p class="p4">Facebook</p>
+            </div>
+        
+            <div class="item35">
+                <img src="./twitter.png" class="img4">
+                <p class="p4">Twitter</p>
+            </div>
+        
+            <div class="item36">
+                <img src="photoshop.jfif" class="img4">
+                <p class="p4">Photoshop ex..</p>
+            </div>
+        
+            <div class="item37">
+                <p class="p1">Get Office on<br> your phone <br>and tablet</p>
+                <p class="p1">Get Office</p>
+                <img src="./news.png" class="img5">
+            </div>
+        
+            <div class="item38">
+                <img src="./pencil.PNG" class="img4">
+                <p class="p4">Sketchbook</p>
+            </div>
+        </div>
+       
+        <!--fourth grid-->
+        <div class="grid4">
+            <div id="four">OEM Group</div>
+       
+            <div class="item41">
+                <img src="Assignment13/oem.PNG" class="img4">
+                <p class="p4">OEM Dash</p>
+            </div>
+       
+            <div class="item42">
+                <img src="setings1.png" class="img4" style="background-color: floralwhite;">
+            </div>
+            
+            <div class="item43">
+                <img src="Assignment13/cube.jpg" class="img4">
+            </div>
+            
+            <div class="item44">
+                <img src="Assignment13/oem sync.PNG" class="img4">
+                <p class="p4">OEM Sync</p>
+            </div>
+            
+            <div class="item45">
+                <img src="Assignment13/settings.png" class="img4">
+            </div>
+            
+            <div class="item46">
+                <img src="Assignment13/clock.jpg" class="img4">
+            </div>
+            
+            <div class="item47">
+                <img src="kindle.gif" class="img4">
+            </div>
+            
+            <div class="item48">
+                <img src="intel.jfif" class="img4">
+            </div>
+            
+            <div class="item49">
+                <img src="amazon.jpg" class="img4">
+            </div>
+            </div>
+
+
+
+    </div>
+</body>
+
+</html>

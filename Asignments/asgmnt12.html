@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid-system</title>
+    <style>
+    .grid-container{
+        width: 620px;
+        height: 600px;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 5px 5px;
+        background-color: rgb(223, 219, 219);
+    }
+.grid-container div{
+    color: white;
+    padding-left: 10px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    /* width: 100px; */
+    /* height: 85px; */
+}
+.blue{background-color:rgb(71, 199, 250);}
+.green{background-color:rgb(27, 151, 124);}
+.purple{background-color:rgb(125, 18, 197);}
+
+    .photoshop{grid-area: a;}
+    .invision{grid-area: b;}
+    .ux{grid-area: c;}
+    .design{grid-area: d;}
+    .rust{grid-area: e;}
+    .php{grid-area: f;}
+    .html{grid-area: g;}
+    .javascript{grid-area: h;}
+    .layout{grid-area: i;}
+    .webdev{grid-area: j;}
+    .ruby{grid-area: k;}
+    .css{grid-area: l;}
+    .go{grid-area: m;}
+    .motion{grid-area: n;}
+    .maya{grid-area: o;}
+    .nuke{grid-area: p;}
+    .cinema4d{grid-area: q;}
+    .aftereffects{grid-area: r;}
+
+    .grid-container{
+        grid-template-areas: 'a b c . . .'
+         '. d d . e .'
+          '. d d f g .'
+          '. h i j j .'
+          '. k l j j .'
+          '. m n n o p '
+          '. . n n q .'
+          '. . . r . .';
+    }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="grid-container">
+    
+        <div class="photoshop blue">Phtotoshop</div>
+        <div class="invision blue">InVision</div>
+        <div class="ux blue">UX</div>
+        <div class="design blue">Design</div>
+        <div class="layout blue">Layout</div>
+    
+        <div class="rust green">Rust</div>
+        <div class="php green">PHP</div class="php">
+        <div class="html green">HTML</div>
+        <div class="javascript green">JavaScript</div>
+        <div class="webdev green">Web Dev</div>
+        <div class="ruby green">Ruby</div>
+        <div class="css green">CSS</div>
+        <div class="go green">Go</div>
+    
+        <div class="motion purple">Motion</div>
+        <div class="maya purple">Maya</div>
+        <div class="nuke purple">Nuke</div>
+        <div class="cinema4d purple">Cinema 4D</div>
+        <div class="aftereffects purple">After Effects</div>
+    </div>
+</center>
+</body>
+</html>
